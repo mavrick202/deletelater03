@@ -1,14 +1,25 @@
-node {
-    stage("Build") {
-        echo "Some code compilation here..."
-    }
+pipeline {
+    agent any
 
-    stage("Test") {
-        echo "Some tests execution here..."
-        echo "1"
-    }
-    stage("Deploy") {
-        echo "Deploying..."
+    stages {
+        stage("Build") {
+            steps {
+                echo "Some code compilation here..."
+            }
+        }
 
+        stage("Test") {
+            steps {
+                echo "Some tests execution here..."
+                
+            }
+        }
+
+        stage("Deploy") {
+            steps {
+                echo "Deploying...."
+                echo "1"
+            }
+        }
     }
 }
